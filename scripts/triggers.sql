@@ -8,7 +8,7 @@ BEGIN
           INNER JOIN airline a ON a.id = e.airline_id
         WHERE e.employment_date < a.establishment_date);
 END;
-
+/
 -- INSERT INTO AIRLINE (id, company, code, country, establishment_date) VALUES (3001, 'Raven', 'RA-47', 'Brazil', null);
 
 
@@ -36,6 +36,7 @@ END;',
    enabled              =>  TRUE,
    comments             => 'Add new flight every hour');
 END;
+/
 
 
 -- 3
@@ -67,8 +68,8 @@ BEGIN
         GROUP BY e.airline_id);
 
 END;
-
--- INSERT INTO flight(id, flight_number, destination_country, destination_city, departure, arrival, passengers, status, delay, is_national, plane_id, airport_id) VALUES (30001, 'flight_number', 'destination_country', 'destination_city', to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), 2137, 'status', 14.88, 0, 1, 1);
+/
+-- INSERT INTO flight(id, flight_number, destination_country, destination_city, departure, arrival, passengers, status, delay, is_national, plane_id, airport_id) VALUES (30001, 'flight_number', 'destination_country', 'destination_city', to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), 1, 'status', 14.88, 0, 1, 1);
 
 
 -- 4
@@ -84,7 +85,7 @@ BEGIN
                      JOIN employee e ON e.id = fe.employee_id);
 
 END;
-
+/
 -- UPDATE flight SET arrival = to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS');
 
 
@@ -100,7 +101,10 @@ BEGIN
   WHERE :new.plane_id = plane.id;
 
   IF (max_passengers < :new.passengers)
-    THEN raise_application_error(-20000, 'IOIOIOIO');
+    THEN raise_application_error(-20000, 'Number of passengers exceeds number of seats!');
   END IF; 
 
 END;
+/
+-- INSERT INTO flight(id, flight_number, destination_country, destination_city, departure, arrival, passengers, status, delay, is_national, plane_id, airport_id) VALUES (30001, 'flight_number', 'destination_country', 'destination_city', to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), 2137, 'status', 14.88, 0, 1, 1);
+

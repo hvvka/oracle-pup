@@ -54,6 +54,7 @@ DROP TRIGGER delete_employees;
 BEGIN
 	DBMS_SCHEDULER.DROP_JOB(job_name => 'add_flights');
 END;
+/
 DROP TRIGGER insert_employees;
 DROP TRIGGER update_flown_hours;
 DROP TRIGGER add_flight_when;

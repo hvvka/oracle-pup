@@ -33,7 +33,7 @@ VALUES
 (30001, 'flight_number', 'destination_country', 'destination_city', 
 to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), 
 to_date('2019-12-11 09:21:41', 'YYYY-MM-DD HH24:MI:SS'), 
-2137, 'status', 14.88, 0, 1, 1);
+1, 'status', 14.88, 0, 1, 1);
 
 INSERT INTO employee 
 (id, 
