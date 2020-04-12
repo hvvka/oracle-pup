@@ -3,7 +3,7 @@
 
 -- 1 
 
-SELECT AVG(TRUNC((sysdate - e.birthdate) / 365)) AS "average employee age"
+SELECT AVG(TRUNC((sysdate - e.birthdate) / 365)) AS 'average employee age'
 FROM employee e 
   JOIN flight_employee fe ON e.id = fe.employee_id
   JOIN flight f ON fe.flight_id = f.id
@@ -53,6 +53,9 @@ SET establishment_date = (SELECT MIN(f.departure)
 
 
 -- 5
+
+INSERT INTO AIRLINE (id, company, code, country, establishment_date) 
+VALUES (3001, 'Raven', 'RA-47', 'Brazil', null);
 
 DELETE (SELECT *
         FROM employee e
