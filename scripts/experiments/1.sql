@@ -25,4 +25,8 @@ insert into foo values ('test', current_timestamp);
 
 select * from foo;
 
+drop trigger triggerC;
+drop trigger triggerB;
+drop trigger triggerA;
+
 drop table foo;

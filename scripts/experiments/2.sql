@@ -22,4 +22,8 @@ end;
 
 insert into foo values ('test');
 
+drop trigger triggerC;
+drop trigger triggerB;
+drop trigger triggerA;
+
 drop table foo;
