@@ -11,7 +11,7 @@ def convert_airport(filename):
             x = float(line.split("'")[-8])
             y = float(line.split("'")[-6])
             line = line.replace("'{}','{}'".format(x, y),
-                                "MDSYS.SDO_GEOMETRY(2001,NULL,MDSYS.SDO_POINT_TYPE({},{},NULL),NULL,NULL)".format(x, y))
+                                "MDSYS.SDO_GEOMETRY(2001,8307,MDSYS.SDO_POINT_TYPE({},{},NULL),NULL,NULL)".format(x, y))
             line = line.replace(");",
                                 ",MDSYS.SDO_GEOMETRY(2003,NULL,NULL,MDSYS.SDO_ELEM_INFO_ARRAY(1,1003,4),"
                                 "MDSYS.SDO_ORDINATE_ARRAY({},{}, {},{}, {},{})));".format(
